@@ -152,6 +152,85 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-我的第二篇博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/07/24/%E6%88%91%E7%9A%84%E7%AC%AC%E4%BA%8C%E7%AF%87%E5%8D%9A%E5%AE%A2/">王大帅的第二篇文章</a>
+    </h1>
+  
+
+        
+        <a href="/2021/07/24/%E6%88%91%E7%9A%84%E7%AC%AC%E4%BA%8C%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
+  	<time datetime="2021-07-24T13:53:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="关于hexo部署头像的问题"><a href="#关于hexo部署头像的问题" class="headerlink" title="关于hexo部署头像的问题"></a>关于hexo部署头像的问题</h2><p>内容：<br>hexo的默认头像就是蓝色的很不美观，我们想要部署上好看的头像应该怎么操作呢，gogogo！</p>
+<p>1.搭建好博客，并且已经更改好yilia的主题</p>
+<p>theme: landscape//找到hexo安装根目录下的yml配置文件</p>
+<p>theme: yilia//将原始的landscape替换成yilia即可</p>
+<p>2.修改themes/yilia文件夹下的yml配置文件</p>
+<p>Miscellaneous baidu_analytics: ‘’ google_analytics: ‘’ favicon: /img/header.png</p>
+<p>你的头像url avatar: /img/head.png</p>
+<p><strong>注意：</strong>当前的根目录不是相对yilia的主题目录，而是yilia/source</p>
+<p>发现修改好相关设置后，设置的头像并不起作用。一开始以为是图片存放路径或者图像分辨率的问题，结果修改路径和图片都不起作用。</p>
+<p>解决方法<br>原来修改头像配置，不光需要修改yilia主题下的yml配置文件还需要修改hexo主目录下的_config.yml文件。</p>
+<p>找到post_asset_folder选项，将其设置为如下：</p>
+<p>post_asset_folder: true//开启显示图片设置</p>
+<p>再次重试，完美解决问题。</p>
+<p>其中：</p>
+<p>favicon: /img/header.png//设置的是浏览器标签页显示的图片</p>
+<p>avatar: /img/head.png//设置博客作者头像</p>
+<p>–</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/07/24/%E6%88%91%E7%9A%84%E7%AC%AC%E4%BA%8C%E7%AF%87%E5%8D%9A%E5%AE%A2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-我的第一篇文章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
