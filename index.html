@@ -152,6 +152,158 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-我的第三篇博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/08/24/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%89%E7%AF%87%E5%8D%9A%E5%AE%A2/">王大帅的第三篇文章</a>
+    </h1>
+  
+
+        
+        <a href="/2021/08/24/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%89%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
+  	<time datetime="2021-08-24T13:53:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="android广播的使用"><a href="#android广播的使用" class="headerlink" title="android广播的使用"></a>android广播的使用</h2><p>内容：<br>首先都是写一个类继承系统的BroadcastReceiver 并重写onReceive这个方法</p>
+<p>public class MyBroadcastReceiver extends BroadcastReceiver {<br>    @Override<br>    public void onReceive(Context context, Intent intent) {<br>    //这里的intent可以获取发送广播时传入的数据<br>        Log.e(“main”, “23333”);<br>    }<br>}</p>
+<p>接下来就是两种使用方式了<br>方式一  静态注册广播（就是在AndroidMainfest.xml中注册） 这种注册后的最大好处就是可以不用手动去注销广播</p>
+<receiver android:name=".activity.MyBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.my.sentborad" />
+            </intent-filter>
+</receiver>
+
+<p>然后就可以使用啦 !<br>eg 可以这样发送广播</p>
+<p> //发送广播<br> bt_send.setOnClickListener(new View.OnClickListener() {<br>            @Override<br>            public void onClick(View v) {<br>                Intent intent=new Intent();<br>                intent.setAction(“sent”);<br>                sendBroadcast(intent);<br>            }<br>        });</p>
+<p>这个时候在日志里面可以看到onReciver方法里的日志了!</p>
+<p>方式二 动态注册广播 这种注册广播后需要手动去注销广播<br>eg<br>注册广播</p>
+<pre><code>    br = new MyBroadcastReceiver();
+    IntentFilter filter = new IntentFilter();
+    filter.addAction(&quot;com.my.sentborad&quot;);
+    registerReceiver(br, filter);
+</code></pre>
+<p> //发送广播<br> bt_send.setOnClickListener(new View.OnClickListener() {<br>            @Override<br>            public void onClick(View v) {<br>                Intent intent=new Intent();<br>                intent.setAction(“sent”);<br>                sendBroadcast(intent);<br>            }<br>        });<br>手动注销广播</p>
+<p> @Override<br>    protected void onDestroy() {<br>        super.onDestroy();<br>        unregisterReceiver(br);<br>    }<br>日志</p>
+<p>**</p>
+<h2 id="在这要注意的"><a href="#在这要注意的" class="headerlink" title="在这要注意的"></a>在这要注意的</h2><p>** 就是广播注册的时候一定要添加action 如这里的“com.my.sentborad”<br>当初就是忘了加action怎都收不到广播！一定要注意这里！一定要注意这里！一定要注意这里！重要的事情说三遍！！！</p>
+<p>–</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/08/24/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%89%E7%AF%87%E5%8D%9A%E5%AE%A2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-我的第四篇博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/07/28/%E6%88%91%E7%9A%84%E7%AC%AC%E5%9B%9B%E7%AF%87%E5%8D%9A%E5%AE%A2/">王大帅的第四篇文章</a>
+    </h1>
+  
+
+        
+        <a href="/2021/07/28/%E6%88%91%E7%9A%84%E7%AC%AC%E5%9B%9B%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
+  	<time datetime="2021-07-28T10:01:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="git的几个常用指令"><a href="#git的几个常用指令" class="headerlink" title="git的几个常用指令"></a>git的几个常用指令</h2><p>内容：<br>常用的git命令</p>
+<p>git init 初始化<br>git fetch 刷新本地分支库<br>git branch 查看本地分支<br>git branch -a 查看远端所有分支<br>git checkout [name] 切换本地分支<br>git checkout -b [name] 基于当前分支创建并切换到新建分支<br>git checkout -b [name] origin/[name] 拉取远端[name]分支，做为本地分支，并切换到[分支]<br>git branch - d [name] 删除分支<br>git pull 当前分支拉取</p>
+<p>git push 当前分支提交</p>
+<p>git fetch -p / git fetch -p origin 刷新origin远端仓库在本地的信息</p>
+<p>–</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/07/28/%E6%88%91%E7%9A%84%E7%AC%AC%E5%9B%9B%E7%AF%87%E5%8D%9A%E5%AE%A2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-我的第二篇博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
